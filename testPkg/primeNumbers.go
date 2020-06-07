@@ -6,7 +6,7 @@ func Primenumbers(num int) (a []int) {
         if i == 1 || i == 0{
 			continue
 		}
-        check := 1; 
+        check := 1 
         for j := 2; j <= i / 2; j++ { 
             if i % j == 0{ 
                 check = 0 
