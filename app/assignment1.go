@@ -2,16 +2,16 @@ package main
 
 import (
 	"fmt"
-    "GoTestingCode/testPkg"
+    "gotestcode/testpkg"
 )
 
 func main() {
     // ============= square and cube =========================
-	a, b := testPkg.Squareandcube(19)
+	var a, b int = testpkg.Sqrandcube(19)
     fmt.Println( "square of a number is:",a)
-    fmt.Println("cube is a number is:",b)
+    fmt.Println("cube of a number is:",b)
 
     // ============== Print N prime Numbers ======================
-    p := testPkg.Primenumbers(100)
-    fmt.Println( "The N prime numbers is:",p)
+    var p string = testpkg.Primenum(100)
+    fmt.Println( "The N prime numbers are:",p)
 }
