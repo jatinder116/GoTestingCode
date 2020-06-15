@@ -5,7 +5,7 @@ import (
     "gotestcode/testpkg"
 )
 
-func main() {
+func mains() {
     // ============= square and cube =========================
 	var a, b int = testpkg.Sqrandcube(19)
     fmt.Println( "square of a number is:",a)
