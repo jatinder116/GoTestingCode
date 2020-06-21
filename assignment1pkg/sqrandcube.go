@@ -1,4 +1,4 @@
-package testpkg
+package assignment1pkg
 
 func Sqrandcube(num int) (s, c int) {
 	s = num * num

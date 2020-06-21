@@ -1,4 +1,4 @@
-package testpkg
+package assignment1pkg
 import (
     "strconv"
 )
