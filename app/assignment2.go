@@ -4,10 +4,14 @@ import (
 	"fmt"
 	"gotestcode/assignment2pkg"
 	"gotestcode/assignment2pkg/structpkg"
+	
 )
 type Student = structpkg.Student
 
-func main() {
+func student() {
+	//======= assignment1 data ======================
+	sqrprime()
+
 	students:= []Student{
 		Student{
 			Id: 1,
