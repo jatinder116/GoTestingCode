@@ -11,6 +11,9 @@ type Student = structpkg.Student
 func student() {
 	//======= assignment1 data ======================
 	sqrprime()
+	
+	fmt.Println("============== *************** ======================")
+	fmt.Println("============== *************** ======================")
 
 	students:= []Student{
 		Student{
