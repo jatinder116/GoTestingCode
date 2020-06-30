@@ -41,9 +41,9 @@ func AddStudent(writer http.ResponseWriter, req * http.Request) {
     }
 
     //======================== Vaidate Json Inputs ======================
-	if ok, errors:= validateJsonParams( &student);
-	!ok {
-        ValidationResponse(errors, writer)
+	if _, err:= validateJsonParams( &student);
+	err !=nil {
+        ValidationResponse(err, writer)
         return
     }
 
