@@ -1,0 +1,25 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "noSF80RZZSeRU8xp0i1NvZ0j36g=",
+			"path": "github.com/gorilla/mux",
+			"revision": "948bec34b5168796bf3fc4dbb09215baa970351a",
+			"revisionTime": "2020-05-17T04:02:54Z"
+		},
+		{
+			"checksumSHA1": "hnOwxCQqk+35llUJrCgcaS1DDxU=",
+			"path": "gopkg.in/go-playground/validator.v9",
+			"revision": "21c910fc6d9c3556c28252b04beb17de0c2d40ec",
+			"revisionTime": "2019-12-25T05:24:06Z"
+		},
+		{
+			"checksumSHA1": "EAnn/PeeIBg01nCHJw9t16cOtHg=",
+			"path": "gopkg.in/validator.v2",
+			"revision": "2b28d334fa054977b7c725c7639a1ca4efc18bad",
+			"revisionTime": "2020-06-05T15:17:37Z"
+		}
+	],
+	"rootPath": "gotestcode/assignment-4"
+}
