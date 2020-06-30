@@ -53,7 +53,7 @@ func AddStudent(writer http.ResponseWriter, req * http.Request) {
     response["status"] = 1
     response["message"] = "Success"
     response["data"] = Students
-    message, err:= json.Marshal(response)
+    data, err:= json.Marshal(response)
     if err != nil {
             writer.WriteHeader(http.StatusInternalServerError)
             writer.Write([] byte("error"))
@@ -61,7 +61,7 @@ func AddStudent(writer http.ResponseWriter, req * http.Request) {
         //=============== Send header, status code and output to writer==================================
     writer.Header().Set("Content-Type", "application/json")
     writer.WriteHeader(http.StatusOK)
-    writer.Write(message)
+    writer.Write(data)
 }
 
 
@@ -96,7 +96,7 @@ func UpdateStudent(writer http.ResponseWriter, req * http.Request) {
             response["status"] = 1
             response["message"] = "Success"
             response["data"] = Students
-            message, err:= json.Marshal(response)
+            data, err:= json.Marshal(response)
             if err != nil {
                     writer.WriteHeader(http.StatusInternalServerError)
                     writer.Write([] byte("error"))
@@ -104,7 +104,7 @@ func UpdateStudent(writer http.ResponseWriter, req * http.Request) {
                 // ===============Send header, status code and output to writer==========================
             writer.Header().Set("Content-Type", "application/json")
             writer.WriteHeader(http.StatusOK)
-            writer.Write(message)
+            writer.Write(data)
             checkStudentExist = 1;
         }
     }
@@ -137,7 +137,7 @@ func DeleteStudent(writer http.ResponseWriter, req * http.Request) {
             response["status"] = 1
             response["message"] = "Success"
             response["data"] = Students
-            message, err:= json.Marshal(response)
+            data, err:= json.Marshal(response)
             if err != nil {
                     writer.WriteHeader(http.StatusInternalServerError)
                     writer.Write([] byte("error"))
@@ -145,7 +145,7 @@ func DeleteStudent(writer http.ResponseWriter, req * http.Request) {
                 //================ Send header, status code and output to writer======================
             writer.Header().Set("Content-Type", "application/json")
             writer.WriteHeader(http.StatusOK)
-            writer.Write(message)
+            writer.Write(data)
             checkStudentExist = 1;
             return
         }
@@ -163,14 +163,14 @@ func GetAllStudents(writer http.ResponseWriter, req * http.Request) {
     response["status"] = 1
     response["message"] = "Success"
     response["data"] = Students
-    message,err:= json.Marshal(response)
+    data,err:= json.Marshal(response)
     if err != nil {
         writer.WriteHeader(http.StatusInternalServerError)
         writer.Write([] byte("error"))
     }
     writer.Header().Set("Content-Type", "application/json")
     writer.WriteHeader(http.StatusOK)
-    writer.Write(message)
+    writer.Write(data)
 }
 
 
@@ -193,7 +193,7 @@ func GetStudentByID(writer http.ResponseWriter, req * http.Request) {
             response["status"] = 1
             response["message"] = "Success"
             response["data"] = student
-            message,err:= json.Marshal(response)
+            data,err:= json.Marshal(response)
             if err != nil {
                 writer.WriteHeader(http.StatusInternalServerError)
                 writer.Write([] byte("error"))
@@ -201,7 +201,7 @@ func GetStudentByID(writer http.ResponseWriter, req * http.Request) {
             //================= Send header, status code and output to writer =======================================
             writer.Header().Set("Content-Type", "application/json")
             writer.WriteHeader(http.StatusOK)
-            writer.Write(message)
+            writer.Write(data)
             checkStudentExist = 1;
         }
     }
