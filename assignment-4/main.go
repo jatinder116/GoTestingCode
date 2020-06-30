@@ -228,11 +228,11 @@ func ErrorResponse(statusCode int, errorMessage string, writer http.ResponseWrit
 }
 
 //=================== validation Response function ====================
-func ValidationResponse(fields map[string][] string, writer http.ResponseWriter) {
+func ValidationResponse(params map[string][] string, writer http.ResponseWriter) {
     response:= make(map[string] interface {})
     response["status"] = 0
     response["message"] = "validation error"
-    response["errors"] = fields
+    response["errors"] = params
     data,err:= json.Marshal(response)
     if err != nil {
         writer.WriteHeader(http.StatusInternalServerError)
