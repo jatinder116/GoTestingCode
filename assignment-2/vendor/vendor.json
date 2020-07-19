@@ -1,0 +1,12 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "L2JeZoL8uM3lTi0GTr7yfFaLx1c=",
+			"path": "student",
+			"revision": ""
+		}
+	],
+	"rootPath": "gotestcode/assignment-2"
+}

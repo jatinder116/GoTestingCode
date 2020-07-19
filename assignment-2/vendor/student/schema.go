@@ -1,4 +1,4 @@
-package structpkg
+package student
 
 type Student struct {
     Id    int
