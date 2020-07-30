@@ -62,11 +62,9 @@ func (s *SmartContract) Invoke(APIstub shim.ChaincodeStubInterface) peer.Respons
 
 // Get owner by id
 func (s *SmartContract) getOwner(APIstub shim.ChaincodeStubInterface, args []string) peer.Response {
-	var err error
 	if len(args) != 1 {
 		return shim.Error("Incorrect number of arguments. Expecting 1")
 	}
-
 	ownerAsBytes, err := APIstub.GetState(args[0])
 	if err != nil {
 		return shim.Error("Owner does not exist with Id '" + args[0] + "'")
@@ -76,14 +74,13 @@ func (s *SmartContract) getOwner(APIstub shim.ChaincodeStubInterface, args []str
 
 // Create an owner
 func (s *SmartContract) createOwner(APIstub shim.ChaincodeStubInterface, args []string) peer.Response {
-	var err error
 	if len(args) != 4 {
 		return shim.Error("Incorrect number of arguments. Expecting at least 3")
 	}
 	var owner = Owner{Id: args[0], Name: args[1], Compnay: args[2], Gender: args[3]}
 	// save the Owner
 	ownerAsBytes, _ := json.Marshal(owner)
-	err = APIstub.PutState(args[0], ownerAsBytes)
+	err := APIstub.PutState(args[0], ownerAsBytes)
 	if err != nil {
 		fmt.Println("Could not save an Owner")
 		return shim.Error(err.Error())
