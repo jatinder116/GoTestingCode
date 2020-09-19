@@ -1,0 +1,87 @@
+  {
+        "name": "GSI-network",
+        "version": "1.0.0",
+        "client": {
+            "organization": "gsi",
+            "connection": {
+                "timeout": {
+                    "peer": {
+                        "endorser": "300"
+                    },
+                    "orderer": "300"
+                }
+            }
+        },
+        "channels": {
+            "mychannel": {
+                "orderers": [
+                    "orderer.gsi.com"
+                ],
+                "peers": {
+                    "peer0.gsi.com": {
+                        "endorsingPeer": true,
+                        "chaincodeQuery": true,
+                        "ledgerQuery": true,
+                        "eventSource": true
+                    }
+                }
+            }
+        },
+        "organizations": {
+            "gsi": {
+                "mspid": "GSIMSP",
+                "peers": [
+                    "peer0.gsi.com"
+                ],
+                "certificateAuthorities": [
+                    "ca.gsi.com"
+                ],
+                "adminPrivateKey": {
+                    "path": "../organizations/peerOrganizations/gsi.com/users/Admin@gsi.com/msp/keystore/priv_sk"
+                },
+                "signedCert": {
+                    "path": "../organizations/peerOrganizations/gsi.com/users/Admin@gsi.com/msp/signcerts/Admin@gsi.com-cert.pem"
+                }
+            }
+        },
+        "orderers": {
+            "orderer.gsi.com": {
+                "url": "grpcs://localhost:7050",
+                "grpcOptions": {
+                    "ssl-target-name-override": "orderer.gsi.com",
+                    "grpc.keepalive_timeout_ms": 15
+                },
+                "tlsCACerts": {
+                    "path": "../organizations/ordererOrganizations/gsi.com/orderers/orderer.gsi.com/msp/tlscacerts/tlsca.gsi.com-cert.pem"
+                }
+            }
+        },
+        "peers": {
+            "peer0.gsi.com": {
+                "url": "grpcs://localhost:7051",
+                "tlsCACerts": {
+                    "path": "../organizations/peerOrganizations/gsi.com/tlsca/tlsca.gsi.com-cert.pem"
+                },
+                "grpcOptions": {
+                    "ssl-target-name-override": "peer0.gsi.com",
+                    "grpc.keepalive_timeout_ms": 20000
+                }
+            }
+        },
+        "certificateAuthorities": {
+            "ca.gsi.com": {
+                "url": "https://localhost:7054",
+                "caName": "ca.gsi.com",
+                "httpOptions": {
+                    "verify": false
+                },
+                "tlsCACerts": {
+                    "path": "../organizations/peerOrganizations/gsi.com/ca/ca.gsi.com-cert.pem"
+                },
+                "registrar": [{
+                    "enrollId": "admin",
+                    "enrollSecret": "adminpw"
+                }]
+            }
+        }
+    }
